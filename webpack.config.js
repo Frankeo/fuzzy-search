@@ -1,4 +1,5 @@
 const path = require("path");
+const TSLintPlugin = require('tslint-webpack-plugin');
 
 module.exports = [
   {
@@ -22,8 +23,13 @@ module.exports = [
     resolve: {
       extensions: ['.ts'],
     },
+    plugins: [
+      new TSLintPlugin({
+        files: ['./src/**/*.ts']
+      })
+    ],
     node: {
       __dirname: false,
-    },
+    }
   }
 ];
