@@ -1,5 +1,5 @@
 const path = require("path");
-const TSLintPlugin = require('tslint-webpack-plugin');
+const TSLintPlugin = require("tslint-webpack-plugin");
 
 module.exports = [
   {
@@ -9,7 +9,7 @@ module.exports = [
       path: path.join(__dirname, "dist"),
       filename: "main.js",
       library: "$",
-      libraryTarget: "umd"
+      libraryTarget: "umd",
     },
     module: {
       rules: [
@@ -21,15 +21,11 @@ module.exports = [
       ],
     },
     resolve: {
-      extensions: ['.ts'],
+      extensions: [".ts"],
     },
-    plugins: [
-      new TSLintPlugin({
-        files: ['./src/**/*.ts']
-      })
-    ],
+    plugins: [new TSLintPlugin({ files: ["./src/**/*.ts"] })],
     node: {
       __dirname: false,
-    }
-  }
+    },
+  },
 ];
