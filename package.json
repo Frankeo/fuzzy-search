@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "test": "TS_NODE_PROJECT='tsconfig.testing.json' mocha"
+    "test": "TS_NODE_PROJECT='tsconfig.json' mocha"
   },
   "repository": {
     "type": "git",
