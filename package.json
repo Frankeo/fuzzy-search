@@ -6,7 +6,7 @@
   "scripts": {
     "build:node": "webpack --env target='node'",
     "build:web": "webpack --env target='web'",
-    "test": "TS_NODE_PROJECT='tsconfig.json' mocha"
+    "test": "TS_NODE_PROJECT='tsconfig.json' mocha -w"
   },
   "repository": {
     "type": "git",

@@ -14,6 +14,6 @@
   "timeout": 2000,
   "ui": "bdd",
   "watch-files": [
-    "src/**/*.test.ts"
+    "src/**/*.ts"
   ]
 }
