@@ -34,7 +34,7 @@ describe('Trie', () => {
     const words = [key, "RANDOM", "BLA", "TEST", "NOT", "ETC", "KEYS"];
     const trie = new Trie();
     words.forEach(word => trie.insert(word));
-    
+
 
     assert.ok(trie.search(key));
   });
