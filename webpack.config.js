@@ -3,29 +3,25 @@ const TSLintPlugin = require("tslint-webpack-plugin");
 
 module.exports = [
   {
+    target: "web",
+    mode: "production",
     entry: "./src/main.ts",
-    mode: "development",
     output: {
       path: path.join(__dirname, "dist"),
       filename: "main.js",
-      library: "$",
-      libraryTarget: "umd",
     },
     module: {
       rules: [
         {
           test: /\.ts$/,
           exclude: /node_modules/,
-          loader: "babel-loader",
+          loader: "ts-loader",
         },
       ],
     },
     resolve: {
       extensions: [".ts"],
     },
-    plugins: [new TSLintPlugin({ files: ["./src/**/*.ts"] })],
-    node: {
-      __dirname: false,
-    },
+    plugins: [new TSLintPlugin({ files: "./src/**/*.ts" })],
   },
 ];
