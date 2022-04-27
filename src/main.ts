@@ -1,3 +1,3 @@
-export function prueba(name: string) {
-  return "HOLA " + name;
-}
+import { Trie } from "./trie/trie";
+
+export const prueba = () => new Trie();
