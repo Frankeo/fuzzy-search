@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
-    "test": "mocha TS_NODE_PROJECT='tsconfig.json'"
+    "build:node": "webpack --env target='node'",
+    "build:web": "webpack --env target='web'",
+    "test": "TS_NODE_PROJECT='tsconfig.json' mocha"
   },
   "repository": {
     "type": "git",
@@ -25,7 +26,8 @@
     "tslint": "^6.1.3",
     "tslint-config-prettier": "^1.18.0",
     "tslint-webpack-plugin": "^2.1.1",
-    "typescript": "^4.6.3"
+    "typescript": "^4.6.3",
+    "webpack-merge": "^5.8.0"
   },
   "dependencies": {
     "webpack": "^5.72.0",

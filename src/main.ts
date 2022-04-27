@@ -1,3 +1,3 @@
- import { Trie } from './trie/trie';
+import { Trie } from "./trie/trie";
 
- console.log(new Trie());
+export const prueba = () => new Trie();
