@@ -11,7 +11,7 @@ describe('Tree Node', () => {
 
     it('should return false when the Node is created and a child is added', () => {
       node.updateChild(1, node);
-      
+
       assert.equal(node.isEmpty(), false);
     });
   });
