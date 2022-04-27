@@ -5,5 +5,5 @@ module.exports = () => ({
   output: {
     path: path.join(__basedir, "dist"),
     filename: "bundle.js",
-  }
+  },
 });

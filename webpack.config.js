@@ -1,6 +1,7 @@
 const TSLintPlugin = require("tslint-webpack-plugin");
-const { merge }= require("webpack-merge");
-const targetConfig = (target) => require(`./webpack/${target}.config.js`)(target);
+const { merge } = require("webpack-merge");
+const targetConfig = (target) =>
+  require(`./webpack/${target}.config.js`)(target);
 
 module.exports = ({ target }) => {
   global.__basedir = __dirname;
