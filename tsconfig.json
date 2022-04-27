@@ -6,5 +6,7 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true
   },
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }
