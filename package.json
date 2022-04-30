@@ -6,7 +6,8 @@
   "scripts": {
     "build:node": "webpack --env target='node'",
     "build:web": "webpack --env target='web'",
-    "test": "TS_NODE_PROJECT='tsconfig.json' mocha -w"
+    "test": "TS_NODE_PROJECT='tsconfig.json' mocha -w",
+    "coverage": "nyc --reporter=text --reporter=html mocha"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,7 @@
   "devDependencies": {
     "@types/mocha": "^9.1.0",
     "mocha": "^9.2.2",
+    "nyc": "^15.1.0",
     "ts-loader": "^9.2.9",
     "ts-node": "^10.7.0",
     "tslint": "^6.1.3",
