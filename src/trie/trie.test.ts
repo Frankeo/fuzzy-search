@@ -58,4 +58,13 @@ describe('Trie', () => {
 
     assert.equal(trie.search(key), false);
   });
+
+  it('should return an Array of all the words in the trie one letter ahead of the given key', () => {
+    const key = "KEY";
+    const words = ["RANDOM", "BLA", "TEST", "NOT", "ETC", "KEYS", "KEYA", "KEYO"];
+    const trie = new Trie();
+    words.forEach(word => trie.insert(word));
+
+    assert.deepEqual(trie.getNextWords(key), ['KEYO', 'KEYS', 'KEYA']);
+  });
 });
