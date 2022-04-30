@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:node": "webpack --env target='node'",
+    "prepublishOnly": "webpack --env target='node'",
     "build:web": "webpack --env target='web'",
     "test": "TS_NODE_PROJECT='tsconfig.json' mocha -w",
     "coverage": "nyc --reporter=text --reporter=html mocha"
