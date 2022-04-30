@@ -5,7 +5,7 @@ import { ListLoader } from "./Loaders/list-loader";
 import { ROOT_CHAR } from "./trie/constants";
 import { Trie } from "./trie/trie";
 
-export class Analizer {
+export class Analyzer {
   private automaton: Nullable<Automaton>;
   private trie: Trie;
 
