@@ -8,7 +8,7 @@ module.exports = ({ target }) => {
   return merge(
     {
       mode: "production",
-      entry: "./src/main.ts",
+      entry: "./src/analyzer.ts",
       module: {
         rules: [
           {
