@@ -1,9 +1,9 @@
 import { ALPHABET_SIZE } from "./constants";
-import { Node } from "./interface";
+import { Node } from "./interfaces";
 
 export class TrieNode implements Node {
   private children: Nullable<Node>[] = Array(ALPHABET_SIZE).fill(null);
-  private character: string;
+  public character: string;
   private isEndWord: boolean;
 
   constructor(character: string) {
@@ -21,6 +21,16 @@ export class TrieNode implements Node {
 
   getChild(index: number) {
     return this.children[index];
+  }
+
+  getValue(): string {
+    return this.character;
+  }
+
+  getChildValues(): string[] {
+    return this.children
+      .filter((child) => Boolean(child))
+      .map((child) => child!.getValue());
   }
 
   markAsLeaf() {

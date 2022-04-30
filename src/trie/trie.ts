@@ -1,12 +1,12 @@
-import { ALPHABET_SIZE } from "./constants";
+import { ALPHABET_SIZE, ROOT_CHAR } from "./constants";
 import { TrieNode } from "./node";
-import { Node, TrieAPI } from './interface';
+import { Node, TrieAPI } from './interfaces';
 
 export class Trie implements TrieAPI {
   private root: Nullable<Node>;
 
   constructor() {
-    this.root = new TrieNode('');
+    this.root = new TrieNode(ROOT_CHAR);
   }
 
   private getIndex(char: string) {
@@ -35,18 +35,36 @@ export class Trie implements TrieAPI {
   search(key: string): boolean {
     if(!key) return false;
 
-    const characters = key.toLowerCase().split('');
+    const characters = key.split('');
     let currentNode = this.root;
 
     for(const char of characters) {
+      if(this.root!.getValue() === char) continue;
       const index = this.getIndex(char);
 
       if(!currentNode?.getChild(index)) return false;
 
-      currentNode = currentNode?.getChild(index);
+      currentNode = currentNode.getChild(index);
     }
 
-    return !!currentNode && currentNode.isEndOfWord()
+    return currentNode!.isEndOfWord()
+  }
+
+  getNextWords(key: string): string[] {
+    if(!key) return [];
+
+    const characters = key.split('');
+    let currentNode = this.root;
+
+    for(const char of characters) {
+      if(this.root!.getValue() === char) continue;
+      const index = this.getIndex(char);
+      if(!currentNode?.getChild(index)) return [];
+
+      currentNode = currentNode.getChild(index);
+    }
+
+    return currentNode!.getChildValues().map(letter => key + letter);
   }
 
   remove(key: string, depth: number = 0, currentNode: Nullable<Node> = this.root): Nullable<Node> {

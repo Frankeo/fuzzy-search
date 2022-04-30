@@ -52,4 +52,21 @@ describe('Tree Node', () => {
       assert.deepStrictEqual(nodeA, node.getChild(1));
     });
   });
+
+  describe('getChildValues Method', () => {
+    it('should return a letter array of every child letter', () => {
+      const nodeA = new TrieNode('a');
+      const nodeB = new TrieNode('b');
+      const nodeC = new TrieNode('c');
+      nodeA.updateChild(1, nodeB);
+      nodeA.updateChild(2, nodeC);
+
+      assert.deepStrictEqual(nodeA.getChildValues(), ["b", "c"]);
+    });
+
+    it('should return an empty array if has no child', () => {
+      const nodeA = new TrieNode('a');
+      assert.deepStrictEqual(nodeA.getChildValues(), []);
+    });
+  });
 });
