@@ -7,7 +7,9 @@
     "prepublishOnly": "webpack --env target='node'",
     "build:web": "webpack --env target='web'",
     "test": "TS_NODE_PROJECT='tsconfig.json' mocha -w",
-    "coverage": "nyc --reporter=text --reporter=html mocha"
+    "test:ci": "TS_NODE_PROJECT='tsconfig.json' mocha",
+    "coverage": "nyc --reporter=text mocha",
+    "coverage:ci": "nyc --reporter=html mocha"
   },
   "repository": {
     "type": "git",
