@@ -5,10 +5,14 @@
   "compilerOptions": {
     "target": "es5",
     "module": "commonjs",
+    "lib": [
+      "DOM"
+    ],
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "outDir": "lib"
+    "declaration": true,
+    "outDir": "dist/types"
   },
   "exclude": [
     "node_modules"
