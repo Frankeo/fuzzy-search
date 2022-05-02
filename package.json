@@ -1,10 +1,10 @@
 {
   "name": "fuzzy-searcher",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Small, well tested fuzzy search for node or browser",
   "main": "./dist/bundle.js",
   "files": [
-    "lib"
+    "dist"
   ],
   "scripts": {
     "prepublishOnly": "webpack --env target='web'",
