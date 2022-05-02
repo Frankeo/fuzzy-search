@@ -2,12 +2,12 @@
   "name": "fuzzy-searcher",
   "version": "1.0.1",
   "description": "Small, well tested fuzzy search for node or browser",
-  "main": "./lib/mian.js",
+  "main": "./dist/bundle.js",
   "files": [
     "lib"
   ],
   "scripts": {
-    "prepublishOnly": "webpack --env target='node'",
+    "prepublishOnly": "webpack --env target='web'",
     "build:web": "webpack --env target='web'",
     "test": "TS_NODE_PROJECT='tsconfig.json' mocha -w",
     "test:ci": "TS_NODE_PROJECT='tsconfig.json' mocha",
