@@ -7,7 +7,9 @@
     "module": "commonjs",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "strict": true
+    "strict": true,
+    "declaration": true,
+    "outDir": "lib"
   },
   "exclude": ["node_modules"]
 }
