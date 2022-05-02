@@ -6,6 +6,6 @@ module.exports = () => ({
     path: path.join(__basedir, "dist"),
     filename: "bundle.js",
     library: "$",
-    libraryTarget: "umd"
+    libraryTarget: "umd",
   },
 });
