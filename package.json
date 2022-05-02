@@ -1,5 +1,5 @@
 {
-  "name": "fuzzylib",
+  "name": "fuzzy-searcher",
   "version": "1.0.0",
   "description": "Small, well tested fuzzy search for node or browser",
   "main": "index.js",
