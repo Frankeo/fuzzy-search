@@ -5,7 +5,7 @@ module.exports = () => ({
   output: {
     path: path.join(__basedir, "dist"),
     filename: "bundle.js",
-    library: ["searcher"],
-    publicPath: '/dist/'
+    library: "$",
+    libraryTarget: "umd",'
   },
 });
