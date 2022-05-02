@@ -1,7 +1,7 @@
 {
-  "name": "fuzzy-search",
+  "name": "fuzzy-lib",
   "version": "1.0.0",
-  "description": "",
+  "description": "Small, well tested fuzzy search for node or browser",
   "main": "index.js",
   "scripts": {
     "prepublishOnly": "webpack --env target='node'",
