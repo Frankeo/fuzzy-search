@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "prepublishOnly": "webpack --env target='web'",
-    "increment:version": "npm version patch",
+    "increment": "npm version patch",
     "build:web": "webpack --env target='web'",
     "test": "TS_NODE_PROJECT='tsconfig.json' mocha -w",
     "test:ci": "TS_NODE_PROJECT='tsconfig.json' mocha",
@@ -16,7 +16,7 @@
     "coverage:ci": "nyc --reporter=html mocha"
   },
   "pre-push": [
-    "increment:version",
+    "increment",
     "test:ci"
   ],
   "repository": {
