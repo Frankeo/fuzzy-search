@@ -2,7 +2,7 @@ import { ALPHABET_SIZE } from "./constants";
 import { Node } from "./interfaces";
 
 export class TrieNode implements Node {
-  private children: Nullable<Node>[] = Array(ALPHABET_SIZE).fill(null);
+  private children = Array(ALPHABET_SIZE).fill(null) as Nullable<Node>[];
   public character: string;
   private isEndWord: boolean;
 

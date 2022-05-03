@@ -1,28 +1,29 @@
-const TSLintPlugin = require("tslint-webpack-plugin");
-const { merge } = require("webpack-merge");
-const targetConfig = (target) =>
-  require(`./webpack/${target}.config.js`)(target);
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-disable @typescript-eslint/naming-convention */
+const ESLintPlugin = require("eslint-webpack-plugin");
+const path = require("path");
 
-module.exports = ({ target }) => {
-  global.__basedir = __dirname;
-  return merge(
-    {
-      mode: "production",
-      entry: "./src/analyzer.ts",
-      module: {
-        rules: [
-          {
-            test: /\.ts$/,
-            exclude: /node_modules/, 
-            loader: "ts-loader",
-          },
-        ],
+module.exports = {
+  output: {
+    path: path.join(__dirname, "dist"),
+    filename: "bundle.js",
+    library: "fuzzySearcher",
+    globalObject: "this",
+    libraryTarget: "umd",
+    umdNamedDefine: true,
+  },
+  mode: "production",
+  entry: "./src/analyzer.ts",
+  module: {
+    rules: [
+      {
+        test: /\.ts$/,
+        loader: "ts-loader",
       },
-      resolve: {
-        extensions: [".ts"],
-      },
-      plugins: [new TSLintPlugin({ files: "./src/**/*.ts" })],
-    },
-    targetConfig(target)
-  );
+    ],
+  },
+  resolve: {
+    extensions: [".ts"],
+  },
+  plugins: [new ESLintPlugin({ files: "./src/**/*.ts" })],
 };

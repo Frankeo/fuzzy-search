@@ -1,6 +1,6 @@
 import { ALPHABET_SIZE, ROOT_CHAR } from "./constants";
 import { TrieNode } from "./node";
-import { Node, TrieAPI } from './interfaces';
+import { Node, TrieAPI } from "./interfaces";
 
 export class Trie implements TrieAPI {
   private root: Nullable<Node>;
@@ -14,15 +14,15 @@ export class Trie implements TrieAPI {
   }
 
   insert(key: string) {
-    if(!key) return;
+    if (!key) return;
 
-    const characters = key.split('');
+    const characters = key.split("");
     let currentNode = this.root;
 
-    for(const char of characters) {
+    for (const char of characters) {
       const index = this.getIndex(char);
 
-      if(!currentNode?.getChild(index)) {
+      if (!currentNode?.getChild(index)) {
         currentNode?.updateChild(index, new TrieNode(char));
       }
 
@@ -33,53 +33,61 @@ export class Trie implements TrieAPI {
   }
 
   search(key: string): boolean {
-    if(!key) return false;
+    if (!key) return false;
 
-    const characters = key.split('');
+    const characters = key.split("");
     let currentNode = this.root;
 
-    for(const char of characters) {
-      if(this.root!.getValue() === char) continue;
+    for (const char of characters) {
+      if (this.root!.getValue() === char) continue;
       const index = this.getIndex(char);
 
-      if(!currentNode?.getChild(index)) return false;
+      if (!currentNode?.getChild(index)) return false;
 
       currentNode = currentNode.getChild(index);
     }
 
-    return currentNode!.isEndOfWord()
+    return currentNode!.isEndOfWord();
   }
 
   getNextWords(key: string): string[] {
-    if(!key) return [];
+    if (!key) return [];
 
-    const characters = key.split('');
+    const characters = key.split("");
     let currentNode = this.root;
 
-    for(const char of characters) {
-      if(this.root!.getValue() === char) continue;
+    for (const char of characters) {
+      if (this.root!.getValue() === char) continue;
       const index = this.getIndex(char);
-      if(!currentNode?.getChild(index)) return [];
+      if (!currentNode?.getChild(index)) return [];
 
       currentNode = currentNode.getChild(index);
     }
 
-    return currentNode!.getChildValues().map(letter => key + letter);
+    return currentNode!.getChildValues().map((letter) => key + letter);
   }
 
-  remove(key: string, depth: number = 0, currentNode: Nullable<Node> = this.root): Nullable<Node> {
-    if(!key) return null;
+  remove(
+    key: string,
+    depth = 0,
+    currentNode: Nullable<Node> = this.root
+  ): Nullable<Node> {
+    if (!key) return null;
 
-    if(depth === key.length) {
-      if(currentNode?.isEndOfWord()) currentNode.unMarkAsLeaf();
-      if(currentNode?.isEmpty()) currentNode = null;
+    if (depth === key.length) {
+      if (currentNode?.isEndOfWord()) currentNode.unMarkAsLeaf();
+      if (currentNode?.isEmpty()) currentNode = null;
       return currentNode;
     }
 
     const index = this.getIndex(key[depth]);
-    currentNode?.updateChild(index, this.remove(key, ++depth, currentNode.getChild(index)));
+    currentNode?.updateChild(
+      index,
+      this.remove(key, ++depth, currentNode.getChild(index))
+    );
 
-    if(currentNode?.isEmpty() && !currentNode.isEndOfWord()) currentNode = null;
+    if (currentNode?.isEmpty() && !currentNode.isEndOfWord())
+      currentNode = null;
 
     return currentNode;
   }

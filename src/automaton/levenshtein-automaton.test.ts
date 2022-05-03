@@ -49,8 +49,8 @@ describe("LevenshteinAutomaton", () => {
     });
   });
 
-  describe('isMatch Method', () => {
-    it('should return true when all the letters match with a given word for any distance', () => {
+  describe("isMatch Method", () => {
+    it("should return true when all the letters match with a given word for any distance", () => {
       const automaton: Automaton = new LevenshteinAutomaton("key", 1);
       const state0 = automaton.start();
 

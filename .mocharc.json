@@ -1,17 +1,11 @@
 {
   "diff": true,
-  "extension": [
-    "ts"
-  ],
+  "extension": ["ts"],
   "package": "./package.json",
   "reporter": "spec",
   "require": "ts-node/register",
   "recursive": true,
-  "spec": [
-    "src/**/*.test.ts"
-  ],
+  "spec": ["src/**/*.test.ts"],
   "ui": "bdd",
-  "watch-files": [
-    "src/**/*.ts"
-  ]
+  "watch-files": ["src/**/*.ts"]
 }
