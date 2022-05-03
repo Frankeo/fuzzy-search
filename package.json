@@ -1,6 +1,6 @@
 {
   "name": "fuzzy-searcher",
-  "version": "1.0.6",
+  "version": "1.0.5",
   "description": "Small, well tested fuzzy search for node or browser",
   "main": "./dist/bundle.js",
   "files": [
@@ -8,6 +8,7 @@
   ],
   "scripts": {
     "prepublishOnly": "webpack --env target='web'",
+    "prepush": "npm version patch",
     "build:web": "webpack --env target='web'",
     "test": "TS_NODE_PROJECT='tsconfig.json' mocha -w",
     "test:ci": "TS_NODE_PROJECT='tsconfig.json' mocha",
