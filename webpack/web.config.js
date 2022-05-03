@@ -5,7 +5,9 @@ module.exports = () => ({
   output: {
     path: path.join(__basedir, "dist"),
     filename: "bundle.js",
-    library: "$",
+    library: "fuzzySearcher",
+    globalObject: "this",
     libraryTarget: "umd",
+    umdNamedDefine: true,
   },
 });
