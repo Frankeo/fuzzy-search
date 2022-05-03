@@ -3,10 +3,10 @@
 
 name: Build Package
 
-on: 
+on:
   push:
     tag-ignore:
-    - '*.*'
+      - "*.*"
 
 jobs:
   build:

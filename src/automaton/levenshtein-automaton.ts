@@ -15,9 +15,13 @@ export class LevenshteinAutomaton implements Automaton {
 
   step(state: State, char: string): State {
     const newState = [state[0] + 1];
-    for(let i = 0; i < state.length - 1; i++) {
+    for (let i = 0; i < state.length - 1; i++) {
       const cost = Number(this.word[i] !== char);
-      const newValue = Math.min(newState[i] + 1, state[i] + cost, state[i+1] + 1);
+      const newValue = Math.min(
+        newState[i] + 1,
+        state[i] + cost,
+        state[i + 1] + 1
+      );
       newState.push(newValue);
     }
     return newState;
