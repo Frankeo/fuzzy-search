@@ -8,6 +8,6 @@ module.exports = () => ({
     library: "fuzzySearcher",
     globalObject: "this",
     libraryTarget: "umd",
-    umdNamedDefine: true
+    umdNamedDefine: true,
   },
 });
