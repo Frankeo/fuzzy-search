@@ -1,6 +1,6 @@
 {
   "name": "fuzzy-searcher",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Small, well tested fuzzy search for node or browser",
   "main": "./dist/bundle.js",
   "types": "./dist/types/analyzer.d.ts",
